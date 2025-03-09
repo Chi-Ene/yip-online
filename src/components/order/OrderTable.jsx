@@ -20,7 +20,6 @@ const filterOptions = [
 export default function OrderTable() {
   const dispatch = useDispatch();
   const orders = useSelector(getOrders);
-  console.log("redux", orders);
 
   const [localOrders, setLocalOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
