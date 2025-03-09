@@ -4,6 +4,7 @@ import { getApiOrders, updateOrderStatus } from "../../api/request";
 import { setOrders, getOrders, updateOrder } from "./orderSlice";
 import OrderList from "./OrderList";
 import Select from "../ui/Select";
+import Logout from "../user/Logout";
 
 const sortOptions = [
   { value: "", label: "Select options" },
@@ -94,7 +95,7 @@ export default function OrderTable() {
   }, [filteredOrders, sortBy]);
 
   return (
-    <div className="relative border border-gray-400 overflow-hidden shadow-md rounded-lg md:px-16 pt-6">
+    <div className="relative border border-gray-400 overflow-hidden shadow-md rounded-lg md:px-16 pt-2 ">
       <h1 className="font-bold text-purple-950 uppercase text-3xl">
         Restaurant Orders
       </h1>
@@ -138,6 +139,9 @@ export default function OrderTable() {
             updateError={statusError}
           />
         </table>
+      </div>
+      <div className="pb-2">
+        <Logout />
       </div>
     </div>
   );
