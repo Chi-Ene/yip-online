@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getApiOrders, updateOrderStatus } from "../../api/request";
+import { getApiOrders } from "../../api/request";
 import { setOrders, getOrders, updateOrder } from "./orderSlice";
 import OrderList from "./OrderList";
 import Select from "../ui/Select";
@@ -58,7 +58,7 @@ export default function OrderTable() {
       setStatusError((prev) => ({ ...prev, [orderId]: null }));
 
       try {
-        await updateOrderStatus(orderId, "completed");
+        // await updateOrderStatus(orderId, "completed");
         dispatch(updateOrder({ orderId, newStatus: "completed" }));
 
         // Update localOrders only after a successful update
